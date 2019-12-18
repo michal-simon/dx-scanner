@@ -450,7 +450,7 @@ export class BitbucketService implements IVCSService {
   async updatePullRequestComment(
     owner: string,
     repo: string,
-    commentId: string,
+    commentId: number,
     body: string,
     pullRequestId: number,
   ): Promise<CreateUpdatePullRequestComment> {

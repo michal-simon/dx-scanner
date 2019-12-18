@@ -24,7 +24,7 @@ export interface IVCSService {
   updatePullRequestComment(
     owner: string,
     repo: string,
-    commentId: string,
+    commentId: number,
     body: string,
     pullRequestId?: number,
   ): Promise<CreateUpdatePullRequestComment>;
@@ -36,6 +36,7 @@ export interface IVCSService {
   getContributorsStats(owner: string, repo: string): Promise<Paginated<ContributorStats>>;
   getIssues(owner: string, repo: string): Promise<Paginated<Issue>>;
   getIssue(owner: string, repo: string, issueNumber: number): Promise<Issue>;
+  getIssueComments(owner: string, repo: string, prNumber: number): Promise<Paginated<PullRequestComment>>;
   getRepoContent(owner: string, repo: string, path: string): Promise<File | Symlink | Directory | null>;
 }
 
